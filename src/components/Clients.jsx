@@ -1,10 +1,19 @@
-import React from "react";
+import { clients } from "../constant";
+import styles from "../style";
 
 const Clients = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
-    </div>
+    <section>
+      <div className={`${styles.flexCenter} my-4`}>
+        <div className={`${styles.flexCenter} flex-wrap w-full`}>
+          {clients.map((client) => (
+            <div key={client.id} className={`flex-1 ${styles.flexCenter} sm:min-w-[192px] min-w-[120px]`}>
+              <img src={client.logo} alt="client" className="sm:[w-192px] w-[120px] object-contain" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
